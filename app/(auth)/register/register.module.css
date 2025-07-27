@@ -1,0 +1,145 @@
+/* register.module.css */
+
+/* This container helps center the form card on the page */
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: linear-gradient(90deg, #b0b5f3 0%, #dcb4e4 100%); /* Matches your homepage background */
+  padding: 2rem; /* Add some padding around the form */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.formCard {
+  background-color: #ffffff;
+  padding: 1.8rem;
+  border-radius: 1rem; /* Rounded corners for the card */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 450px; /* Max width for the form card */
+  width: 100%; /* Ensure it takes full width on smaller screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally within the card */
+  text-align: center; /* Center text within the card */
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333; /* Darker text for contrast */
+  margin-bottom: 2rem;
+}
+
+.registrationForm {
+  width: 100%; /* Form takes full width of its parent card */
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+  text-align: left; /* Align labels and inputs to the left */
+}
+
+.inputGroup label {
+  display: block; /* Make label take full width */
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem; /* Slightly rounded input fields */
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #7f5af0; /* Highlight border on focus */
+  box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.2); /* Soft glow on focus */
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background-color: #7f5af0; /* Matches your CTA button color */
+  color: white;
+  border: none;
+  border-radius: 0.75rem; /* More rounded button */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background-color: #6a49d6; /* Slightly darker purple on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 8px 15px rgba(127, 90, 240, 0.3);
+}
+
+/* Message Styling (error and success) */
+.message {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.loginPrompt { /* Renamed from .redirect for clarity */
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1.5rem;
+}
+
+.loginLink { /* Renamed from the Link direct styling */
+  color: #7f5af0; /* Matches primary color */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .formCard {
+    padding: 1.5rem;
+    margin: 1rem; /* Add margin to prevent sticking to edges */
+  }
+
+  .formTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .inputGroup input,
+  .submitButton {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}

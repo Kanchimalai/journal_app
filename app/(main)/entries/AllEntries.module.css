@@ -1,0 +1,194 @@
+/* AllEntries.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Light grey background for a clean look */
+  padding: 2rem;
+  padding-top: 80px; /* Space for fixed Navbar */
+  box-sizing: border-box;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Header Section (Title and Add New Button) */
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 2rem auto; /* Center and add bottom margin */
+  padding: 0 1rem; /* Inner padding */
+}
+
+.pageTitle {
+  font-size: 2.5rem; /* Adjusted font size */
+  font-weight: 700;
+  color: #333;
+}
+
+.addNewButton {
+  font-size: 1rem;
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  color: white;
+  background-color: #7f5af0; /* Primary purple color */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 10px rgba(127, 90, 240, 0.2);
+}
+
+.addNewButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(127, 90, 240, 0.3);
+  background-color: #6a49d6;
+}
+
+/* Filters Section */
+.filtersSection {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1rem; /* Space between filters */
+  justify-content: center; /* Center filters */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 2.5rem auto; /* Center and add bottom margin */
+  padding: 0 1rem; /* Inner padding */
+}
+
+.filterInput,
+.filterSelect {
+  flex: 1; /* Allow inputs to grow and shrink */
+  min-width: 200px; /* Minimum width for filters */
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.filterInput:focus,
+.filterSelect:focus {
+  outline: none;
+  border-color: #7f5af0;
+  box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.2);
+}
+
+/* Entries Grid Layout */
+.entriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Space between cards */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* Center the grid */
+  padding: 0 1rem; /* Inner padding */
+}
+
+/* Journal Card styling (these styles are typically in JournalCard.module.css) */
+/* For this request, I will assume JournalCard.module.css exists and focus on the layout of THIS page */
+
+/* Loading, Error, and Empty States */
+.loadingState, .errorState, .emptyState {
+  flex-grow: 1; /* Allows them to take up available vertical space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #555;
+  padding: 2rem;
+  text-align: center;
+}
+
+.emptyStateLink { /* Styling for the link within empty state */
+  color: #7f5af0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.emptyStateLink:hover {
+  text-decoration: underline;
+}
+
+.retryButton {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  border: 1px solid #dc3545; /* Red border for error */
+  color: #dc3545; /* Red text */
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retryButton:hover {
+  background-color: #dc3545;
+  color: white;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1.5rem;
+    padding-top: 70px;
+  }
+  .headerSection {
+    flex-direction: column;
+    align-items: flex-start; /* Align title and button to start */
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0; /* Remove horizontal padding for header on small screens */
+  }
+  .pageTitle {
+    font-size: 2rem; /* Further adjusted for smaller screens */
+    text-align: left;
+    width: 100%;
+  }
+  .addNewButton {
+    width: 100%; /* Full width button */
+    max-width: 300px; /* Limit max width */
+    text-align: center;
+  }
+  .filtersSection {
+    flex-direction: column; /* Stack filters vertically */
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .filterInput,
+  .filterSelect {
+    width: 100%; /* Full width filters */
+    min-width: unset; /* Remove min-width to allow full width */
+  }
+  .entriesGrid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    padding: 0; /* Remove horizontal padding for grid on small screens */
+  }
+  /* JournalCard styles (if defined here) would also need responsive adjustments */
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    padding: 1rem;
+    padding-top: 60px;
+  }
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+  .addNewButton, .emptyStateButton, .retryButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}

@@ -1,0 +1,109 @@
+/* dashboard.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  min-height: 90vh;  /* Reverted to gradient background */
+  padding: 2rem; /* Keep some padding around the edges */
+  box-sizing: border-box;
+  text-align: center; /* Center text content within the container */
+  overflow: hidden; /* Ensures the page is non-scrollable */
+  padding-top: 80px; /* Add extra padding at the top to account for the fixed Navbar */
+}
+
+.loadingContent {
+  font-size: 1.2rem;
+  color: white; /* Adjusted color for gradient background */
+  flex-grow: 1; /* Allow loading content to take available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcomeTitle {
+  font-size: 3.5rem; /* Slightly larger title for full screen */
+  font-weight: 700;
+  color: rgb(9, 9, 9); /* White text for better contrast on gradient */
+  margin-bottom: 1.5rem; /* Increased margin */
+}
+
+.welcomeSubtitle {
+  font-size: 1.5rem; /* Slightly larger subtitle */
+  color: rgb(25, 25, 25); /* White text for better contrast on gradient */
+  margin-bottom: 3rem; /* Increased margin */
+  line-height: 1.6;
+  max-width: 90%; /* Increased max-width for full screen feel */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 1.5rem; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  width: 90%; /* Ensure button group takes more width */
+  max-width: 800px; /* Added max-width for button group to prevent excessive stretching */
+}
+
+.dashboardButton {
+  font-size: 1.1rem;
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  color: white;
+  background-color: #7f5af0; /* Primary purple color */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  min-width: 220px; /* Ensure buttons have a slightly larger minimum width */
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(127, 90, 240, 0.2); /* Add a subtle shadow */
+}
+
+.dashboardButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(127, 90, 240, 0.3);
+  background-color: #6a49d6; /* Slightly darker purple on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1.5rem;
+    padding-top: 70px; /* Adjust padding for smaller screens with navbar */
+  }
+  .welcomeTitle {
+    font-size: 2.8rem;
+  }
+  .welcomeSubtitle {
+    font-size: 1.2rem;
+    max-width: 95%; /* Adjust for smaller screens */
+  }
+  .dashboardButton {
+    width: 100%; /* Full width buttons on small screens */
+    max-width: 300px; /* Limit max width even when full width */
+  }
+  .buttonGroup {
+    width: 95%; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    padding: 1rem;
+    padding-top: 60px; /* Adjust padding for very small screens */
+  }
+  .welcomeTitle {
+    font-size: 2.2rem;
+  }
+  .welcomeSubtitle {
+    font-size: 1rem;
+  }
+  .dashboardButton {
+    min-width: unset; /* Remove min-width to allow better wrapping */
+  }
+}

@@ -1,0 +1,339 @@
+/* HomePage.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 92vh;
+  /*background: linear-gradient(to bottom, #ff6ec4, #7873f5);*/
+  background: linear-gradient(to bottom, #c13cc1, #6d7fe2, #35c4f0);
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px; /* Ensure space for the fixed navigation bar */
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  filter: blur(80px);
+}
+
+.shapeOne {
+  width: 400px;
+  height: 400px;
+  top: -150px;
+  left: -150px;
+}
+
+.shapeTwo {
+  width: 500px;
+  height: 500px;
+  bottom: -200px;
+  right: -200px;
+}
+
+.shapeThree {
+  width: 300px;
+  height: 300px;
+  bottom: 50px;
+  left: 100px;
+}
+
+/* Integrated Navigation Bar Styling */
+.homeNavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent; /* Made background transparent */
+  backdrop-filter: blur(10px); /* Reduced blur slightly for more blending */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: none; /* Removed border */
+  box-shadow: none; /* Removed shadow */
+  padding: 0 4rem 0 1.5rem; /* Adjusted padding: less on left, more on right to shift content left */
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navContainer {
+  width: 100%; /* Take full width within the padded navbar */
+  display: flex;
+  justify-content: space-between; /* Keep items pushed to ends */
+  align-items: center;
+}
+
+.homeBrandLink { /* New class for the Link wrapping logo and text */
+  display: flex; /* Use flexbox to align logo and text */
+  align-items: center; /* Vertically center logo and text */
+  gap: 0.5rem; /* Space between logo and text */
+  font-size: 1.5rem;
+  padding-left:10px;
+  font-weight: bold;
+  color: rgb(251, 248, 248);
+  text-decoration: none; /* No underline */
+  transition: color 0.2s ease; /* Smooth transition for hover */
+}
+
+.homeBrandLink:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+  ; /* Slightly dim on hover */
+}
+
+.homeLogo {
+  border-radius: 50%; /* Make the logo circular */
+  /* You can add more styling here if needed, e.g., a subtle border */
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.homeLoginButton {
+  background-color: transparent; /* No background box */
+  color: rgb(251, 248, 248); /* White text color */
+  padding: 60px; /* Remove padding */
+  border-radius: 0; /* No border radius */
+  font-weight: bold;
+  font-size:1.5rem;
+  text-decoration: none; /* No underline */
+  display: inline-block;
+  border: none; /* No border */
+  transition: color 0.2s ease; /* Smooth transition for hover */
+  box-shadow: none; /* No shadow */
+}
+
+.homeLoginButton:hover {
+  transform: none; /* Remove transform on hover */
+  box-shadow: none; /* Remove shadow on hover */
+  text-decoration: none; /* Ensure no underline on hover */
+  color: rgba(70, 14, 224, 0.8); /* Slightly dim on hover */
+}
+
+
+/* Main Content Styling (remains largely the same) */
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 2rem 2rem 5rem;
+  z-index: 1;
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.textContainer {
+  flex: 1.5;
+  min-width: 300px;
+  text-align: left;
+  padding-right: 1rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  font-size: 1.1rem;
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  color: white;
+  background-color: #7f5af0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(127, 90, 240, 0.3);
+}
+
+.phonePreview {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Phone Frame Styling */
+.phoneFrame {
+  width: 280px;
+  height: 560px;
+  background-color: #000;
+  border-radius: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.phoneScreen {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f5;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Status Bar */
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.time {
+  font-weight: 600;
+}
+
+.signalIcons {
+  display: flex;
+  gap: 0.5rem;
+  color: #555;
+}
+
+.signalIcons svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* App Header */
+.appHeader {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Content Card */
+.contentCard {
+  background-color: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem;
+  margin-bottom: auto;
+  flex-shrink: 0;
+}
+
+.cardImage {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #a8dadc 0%, #457b9d 100%);
+  border-radius: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Floating Action Button (FAB) */
+.fabButton {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #7f5af0;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 5px 15px rgba(127, 90, 240, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.fabButton:hover {
+  transform: translateY(-2px);
+}
+
+.fabButton svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textContainer {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .phonePreview {
+    margin-top: 2rem;
+  }
+
+  .homeNavbar {
+    padding: 0 1rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+}

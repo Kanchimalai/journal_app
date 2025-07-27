@@ -1,0 +1,128 @@
+/* Navbar.module.css */
+
+.navbar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent; /* Transparent background */
+  /* backdrop-filter: blur(10px); /* Consistent blur with homepage */
+  /* -webkit-backdrop-filter: blur(10px); */ 
+  border-bottom: none; /* No border for blendable effect */
+  box-shadow: none; /* No shadow for blendable effect */
+  padding: 0 2rem; /* Standard padding */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+}
+
+.navContainer {
+  width: 100%;
+  max-width: 1200px; /* Set max-width for consistent content alignment */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Brand left, links right */
+  align-items: center;
+}
+
+.brandLink { /* New class to wrap logo and text */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between logo and text */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(87, 10, 253, 0.8); /* White text for brand */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.brandLink:hover {
+  color: rgba(87, 10, 253, 0.8); /* Subtle dim on hover */
+  text-decoration: none;
+}
+
+.brandLogo {
+  border-radius: 50%; /* Circular logo */
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLinks a { /* Styling for all navigation links when logged in */
+  text-decoration: none;
+  color: rgba(87, 10, 253, 0.8); /* White text */
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 0.5rem 1rem; /* Added slight padding for better click area */
+  border-radius: 0.5rem; /* Subtle rounded corners */
+}
+
+.navLinks a:hover {
+  color: rgba(123, 10, 243, 0.8); /* Subtle dim on hover */
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+}
+
+.logoutButton {
+  background: transparent; /* Transparent background */
+  border: none; /* No border */
+  color: rgb(119, 8, 236); /* White text */
+  padding: 0.5rem 1rem; /* Consistent padding with nav links */
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem; /* Adjusted font size */
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Styling for the Login button (when user is NOT logged in) */
+.loginButton {
+  background-color: transparent; /* No background box */
+  color: white; /* White text color */
+  padding: 0; /* Remove padding */
+  border-radius: 0; /* No border radius */
+  font-weight: 500; /* Adjusted font-weight */
+  font-size: 1rem; /* Adjusted font-size */
+  text-decoration: none; /* No underline */
+  display: inline-block;
+  border: none; /* No border */
+  transition: color 0.2s ease; /* Smooth transition for hover */
+  box-shadow: none; /* No shadow */
+}
+
+.loginButton:hover {
+  transform: none; /* Remove transform on hover */
+  box-shadow: none; /* Remove shadow on hover */
+  text-decoration: none; /* Ensure no underline on hover */
+  color: rgba(255, 255, 255, 0.8); /* Slightly dim on hover */
+}
+
+/* Responsive adjustments for Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem; /* Adjust padding for smaller screens */
+  }
+  .navLinks {
+    gap: 1rem; /* Reduce gap between links */
+  }
+}
+
+@media (max-width: 480px) {
+  .brandLink {
+    font-size: 1.2rem;
+  }
+  .navLinks a, .logoutButton, .loginButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
