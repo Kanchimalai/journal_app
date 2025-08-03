@@ -2,17 +2,17 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import styles from './login.module.css'; // Import the new CSS module
+import styles from './login.module.css'; 
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState({ type: '', text: '' }); // Consolidated message state for error/success
+  const [message, setMessage] = useState({ type: '', text: '' }); 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage({ type: '', text: '' }); // Clear previous messages
+    setMessage({ type: '', text: '' }); 
 
     try {
       const res = await fetch('/api/auth/login', {
@@ -22,11 +22,11 @@ export default function LoginPage() {
       });
 
       if (res.ok) {
-        setMessage({ type: 'success', text: 'Login successful! Redirecting to dashboard...' }); // Added success message
+        setMessage({ type: 'success', text: 'Login successful! Redirecting to dashboard...' }); 
         setTimeout(() => {
           router.push('/dashboard');
-          router.refresh(); // Important to refresh and let middleware redirect
-        }, 1500); // Short delay for message visibility
+          router.refresh(); 
+        }, 1500); 
       } else {
         const data = await res.json();
         setMessage({ type: 'error', text: data.message || 'Failed to login' });
@@ -37,19 +37,19 @@ export default function LoginPage() {
   };
 
   return (
-    <div className={styles.pageContainer}> {/* Applied for full-page centering and background */}
-      <div className={styles.formCard}> {/* Applied for the card-like styling */}
-        <h1 className={styles.formTitle}>Login</h1> {/* Applied for title styling */}
+    <div className={styles.pageContainer}> 
+      <div className={styles.formCard}> 
+        <h1 className={styles.formTitle}>Login</h1> 
 
-        {/* Display messages (error or success) */}
+        
         {message.text && (
           <div className={`${styles.message} ${styles[message.type]}`}>
             {message.text}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className={styles.loginForm}> {/* Applied for form width */}
-          <div className={styles.inputGroup}> {/* Applied for input grouping and spacing */}
+        <form onSubmit={handleSubmit} className={styles.loginForm}> 
+          <div className={styles.inputGroup}> 
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -71,10 +71,10 @@ export default function LoginPage() {
               required
             />
           </div>
-          <button type="submit" className={styles.submitButton}>Login</button> {/* Applied for button styling */}
+          <button type="submit" className={styles.submitButton}>Login</button> 
         </form>
-        <p className={styles.registerPrompt}> {/* Applied for redirect text styling */}
-          Don't have an account? <Link href="/register" className={styles.registerLink}>Register here</Link> {/* Applied for link styling */}
+        <p className={styles.registerPrompt}> 
+          Don't have an account? <Link href="/register" className={styles.registerLink}>Register here</Link> 
         </p>
       </div>
     </div>

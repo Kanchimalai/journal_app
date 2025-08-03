@@ -8,15 +8,15 @@ export default function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState(''); // Added state for confirm password
-  const [message, setMessage] = useState({ type: '', text: '' }); // Consolidated message state for error/success
+  const [confirmPassword, setConfirmPassword] = useState(''); 
+  const [message, setMessage] = useState({ type: '', text: '' }); 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage({ type: '', text: '' }); // Clear previous messages
+    setMessage({ type: '', text: '' }); 
 
-    // Check if passwords match
+    
     if (password !== confirmPassword) {
       setMessage({ type: 'error', text: 'Passwords do not match!' });
       return;
@@ -44,19 +44,19 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className={styles.pageContainer}> {/* Applied for full-page centering and background */}
-      <div className={styles.formCard}> {/* Applied for the card-like styling */}
-        <h1 className={styles.formTitle}>Register</h1> {/* Applied for title styling */}
+    <div className={styles.pageContainer}> 
+      <div className={styles.formCard}> 
+        <h1 className={styles.formTitle}>Register</h1>
 
-        {/* Display messages (error or success) */}
+        
         {message.text && (
           <div className={`${styles.message} ${styles[message.type]}`}>
             {message.text}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className={styles.registrationForm}> {/* Applied for form width */}
-          <div className={styles.inputGroup}> {/* Applied for input grouping and spacing */}
+        <form onSubmit={handleSubmit} className={styles.registrationForm}> 
+          <div className={styles.inputGroup}> 
             <label htmlFor="name">Name</label>
             <input
               type="text"
@@ -90,7 +90,7 @@ export default function RegisterPage() {
               minLength="6"
             />
           </div>
-          <div className={styles.inputGroup}> {/* New input group for confirm password */}
+          <div className={styles.inputGroup}> 
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               type="password"
@@ -101,10 +101,10 @@ export default function RegisterPage() {
               required
             />
           </div>
-          <button type="submit" className={styles.submitButton}>Register</button> {/* Applied for button styling */}
+          <button type="submit" className={styles.submitButton}>Register</button> 
         </form>
-        <p className={styles.loginPrompt}> {/* Applied for redirect text styling */}
-          Already have an account? <Link href="/login" className={styles.loginLink}>Login here</Link> {/* Applied for link styling */}
+        <p className={styles.loginPrompt}> 
+          Already have an account? <Link href="/login" className={styles.loginLink}>Login here</Link> 
         </p>
       </div>
     </div>

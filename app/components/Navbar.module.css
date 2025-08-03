@@ -1,50 +1,48 @@
-/* Navbar.module.css */
-
 .navbar {
-  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  background: transparent; /* Transparent background */
-  /* backdrop-filter: blur(10px); /* Consistent blur with homepage */
-  /* -webkit-backdrop-filter: blur(10px); */ 
-  border-bottom: none; /* No border for blendable effect */
-  box-shadow: none; /* No shadow for blendable effect */
-  padding: 0 2rem; /* Standard padding */
+
+  border-bottom: none; 
+  box-shadow: none; 
+  padding: 0 2rem; 
   height: 60px;
   display: flex;
   align-items: center;
-  opacity: 1;
+  position: fixed;
+  top: 0;
+
 }
+
 
 .navContainer {
   width: 100%;
-  max-width: 1200px; /* Set max-width for consistent content alignment */
+  max-width: 1200px; 
   margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* Brand left, links right */
+  justify-content: space-between; 
   align-items: center;
 }
 
-.brandLink { /* New class to wrap logo and text */
+.brandLink { 
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Space between logo and text */
+  gap: 0.5rem; 
   font-size: 1.5rem;
-  font-weight: bold;
-  color: rgba(87, 10, 253, 0.8); /* White text for brand */
+  font-weight: bolder;
+  color: rgba(22, 21, 22, 0.8); 
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .brandLink:hover {
-  color: rgba(87, 10, 253, 0.8); /* Subtle dim on hover */
+  color: white; 
   text-decoration: none;
 }
 
 .brandLogo {
-  border-radius: 50%; /* Circular logo */
+  border-radius: 50%; 
 }
 
 .navLinks {
@@ -53,67 +51,67 @@
   gap: 1.5rem;
 }
 
-.navLinks a { /* Styling for all navigation links when logged in */
+.navLinks a { 
   text-decoration: none;
-  color: rgba(87, 10, 253, 0.8); /* White text */
+  color: rgba(26, 25, 26, 0.8); 
   font-weight: 500;
   transition: color 0.2s ease, background-color 0.2s ease;
-  padding: 0.5rem 1rem; /* Added slight padding for better click area */
-  border-radius: 0.5rem; /* Subtle rounded corners */
+  padding: 0.5rem 1rem; 
+  border-radius: 0.5rem; 
 }
 
 .navLinks a:hover {
-  color: rgba(123, 10, 243, 0.8); /* Subtle dim on hover */
+  color: white; 
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+  background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .logoutButton {
-  background: transparent; /* Transparent background */
-  border: none; /* No border */
-  color: rgb(119, 8, 236); /* White text */
-  padding: 0.5rem 1rem; /* Consistent padding with nav links */
+  background: transparent; 
+  border: none; 
+  color: rgb(15, 14, 14); 
+  padding: 0.5rem 1rem; 
   border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 1rem; /* Adjusted font size */
+  font-size: 1rem; 
   font-weight: 600;
   transition: all 0.2s ease;
 }
 
 .logoutButton:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
-  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: rgba(0, 0, 0, 0.8);
 }
 
-/* Styling for the Login button (when user is NOT logged in) */
+
 .loginButton {
-  background-color: transparent; /* No background box */
-  color: white; /* White text color */
-  padding: 0; /* Remove padding */
-  border-radius: 0; /* No border radius */
-  font-weight: 500; /* Adjusted font-weight */
-  font-size: 1rem; /* Adjusted font-size */
-  text-decoration: none; /* No underline */
+  background-color: transparent; 
+  color: black; 
+  padding: 0; 
+  border-radius: 0; 
+  font-weight: 500; 
+  font-size: 1rem; 
+  text-decoration: none; 
   display: inline-block;
-  border: none; /* No border */
-  transition: color 0.2s ease; /* Smooth transition for hover */
-  box-shadow: none; /* No shadow */
+  border: none; 
+  transition: color 0.2s ease; 
+  box-shadow: none; 
 }
 
 .loginButton:hover {
-  transform: none; /* Remove transform on hover */
-  box-shadow: none; /* Remove shadow on hover */
-  text-decoration: none; /* Ensure no underline on hover */
-  color: rgba(255, 255, 255, 0.8); /* Slightly dim on hover */
+  transform: none; 
+  box-shadow: none; 
+  text-decoration: none; 
+  color: white; 
 }
 
-/* Responsive adjustments for Navbar */
+
 @media (max-width: 768px) {
   .navbar {
-    padding: 0 1rem; /* Adjust padding for smaller screens */
+    padding: 0 1rem; 
   }
   .navLinks {
-    gap: 1rem; /* Reduce gap between links */
+    gap: 1rem; 
   }
 }
 

@@ -1,47 +1,44 @@
-/* register.module.css */
-
-/* This container helps center the form card on the page */
 .pageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 90vh;
-  background: linear-gradient(90deg, #b0b5f3 0%, #dcb4e4 100%); /* Matches your homepage background */
-  padding: 2rem; /* Add some padding around the form */
-  box-sizing: border-box; /* Include padding in element's total width and height */
+  background: linear-gradient(90deg, #b0b5f3 0%, #dcb4e4 100%); 
+  padding: 2rem; 
+  box-sizing: border-box; 
 }
 
 .formCard {
   background-color: #ffffff;
   padding: 1.8rem;
-  border-radius: 1rem; /* Rounded corners for the card */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  max-width: 450px; /* Max width for the form card */
-  width: 100%; /* Ensure it takes full width on smaller screens */
+  border-radius: 1rem; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); 
+  max-width: 450px; 
+  width: 100%; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally within the card */
-  text-align: center; /* Center text within the card */
+  align-items: center; 
+  text-align: center; 
 }
 
 .formTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: #333; /* Darker text for contrast */
+  color: #333; 
   margin-bottom: 2rem;
 }
 
 .registrationForm {
-  width: 100%; /* Form takes full width of its parent card */
+  width: 100%; 
 }
 
 .inputGroup {
   margin-bottom: 1.5rem;
-  text-align: left; /* Align labels and inputs to the left */
+  text-align: left; 
 }
 
 .inputGroup label {
-  display: block; /* Make label take full width */
+  display: block; 
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 0.5rem;
@@ -52,26 +49,26 @@
   width: 100%;
   padding: 0.9rem 1rem;
   border: 1px solid #ddd;
-  border-radius: 0.5rem; /* Slightly rounded input fields */
+  border-radius: 0.5rem; 
   font-size: 1rem;
   color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box; /* Include padding in width */
+  box-sizing: border-box; 
 }
 
 .inputGroup input:focus {
   outline: none;
-  border-color: #7f5af0; /* Highlight border on focus */
-  box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.2); /* Soft glow on focus */
+  border-color: #7f5af0; 
+  box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.2); 
 }
 
 .submitButton {
   width: 100%;
   padding: 1rem;
-  background-color: #7f5af0; /* Matches your CTA button color */
+  background-color: #7f5af0;
   color: white;
   border: none;
-  border-radius: 0.75rem; /* More rounded button */
+  border-radius: 0.75rem; 
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -80,12 +77,12 @@
 }
 
 .submitButton:hover {
-  background-color: #6a49d6; /* Slightly darker purple on hover */
-  transform: translateY(-2px); /* Lift effect on hover */
+  background-color: #6a49d6; 
+  transform: translateY(-2px); 
   box-shadow: 0 8px 15px rgba(127, 90, 240, 0.3);
 }
 
-/* Message Styling (error and success) */
+
 .message {
   padding: 1rem;
   border-radius: 0.5rem;
@@ -108,14 +105,14 @@
   border: 1px solid #f5c6cb;
 }
 
-.loginPrompt { /* Renamed from .redirect for clarity */
+.loginPrompt { 
   font-size: 0.9rem;
   color: #666;
   margin-top: 1.5rem;
 }
 
-.loginLink { /* Renamed from the Link direct styling */
-  color: #7f5af0; /* Matches primary color */
+.loginLink { 
+  color: #7f5af0; 
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
@@ -125,11 +122,11 @@
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 600px) {
   .formCard {
     padding: 1.5rem;
-    margin: 1rem; /* Add margin to prevent sticking to edges */
+    margin: 1rem; 
   }
 
   .formTitle {
